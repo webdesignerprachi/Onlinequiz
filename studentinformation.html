@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+span{
+color:black;
+}
+
+</style>
+<script src="login.js"></script>
+	<title>Online Quiz</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
+					<span class="login100-form-title-1">
+					Student Information
+					</span>
+				</div>
+				
+
+					<form name="myForm" onsubmit="return validateForm()" class="login100-form validate-form" action="questions.html">
+
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100" style="color:black;">Student Name</span>
+						<input class="input100" type="text" id="username"  name="Student Name" placeholder="Enter your name">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100" style="color:black;">Father's Name</span>
+						<input class="input100" type="text"  name="Father's name" placeholder="Enter your father's name">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100" style="color:black;">Mother's Name</span>
+						<input class="input100" type="text"   name="Mother's Name" placeholder="Enter your mother's name">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100" style="color:black;">Date of Birth</span>
+						<input class="input100" type="date"   name="Date of Birth" placeholder="Enter your D.O.B">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100" style="color:black;">Address</span>
+						<input class="input100" type="text"   name="Address" placeholder="Enter your address">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100" style="color:black;">City</span>
+						<input class="input100" type="text"   name="City" placeholder="Enter your city">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100" style="color:black;">State</span>
+						<input class="input100" type="text"  name="state" placeholder="Enter your state">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-26" required>
+						<span class="label-input100" style="color:black;"> Pin code</span>
+						<input class="input100" type="text"  name="Pin code" placeholder="Enter the pin code">
+						<span class="focus-input100"></span>
+					</div>
+					
+					<div class="wrap-input100 validate-input m-b-26" required>
+						<span class="label-input100" style="color:black;">Gender</span>
+						<input  type="radio" style="margin-left:0px;" name="Male" placeholder="Enter_Male">Male<br>
+						<input  type="radio" style="margin-left:0px;"  name="Male" placeholder="Enter_Female">Female
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100" style="color:black;">E-mail</span>
+						<input class="input100" type="text"   name="E-mail" placeholder="Enter your e-mail id">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100" style="color:black;">Contact</span>
+						<input class="input100" type="text"   name="Contact" placeholder="Enter your contact no.">
+						<span class="focus-input100"></span>
+					</div>
+					
+                <div class="col-auto">
+                <input type="submit" style="background-color:#696969; height:25px; width:100px;color:white;border-radius:45%;	" value="SUBMIT" id="submit" onclick="validate()"/>
+                </div>
+				</form>
+<script>
+function validateForm() {
+  let x = document.forms["myForm"]["Student Name"].value;
+  
+  if (x== "")
+  {alert("Student Name must be filled out");
+  return false;
+  }
+   let y = document.forms["myForm"]["Father's name"].value;
+  
+  if (y== "")
+  {alert("Father Name must be filled out");
+  return false;
+  }
+  let z = document.forms["myForm"]["Mother's Name"].value;
+  
+  if (z== "")
+  {alert("Mother Name must be filled out");
+  return false;
+  }
+  let c = document.forms["myForm"]["Date of Birth"].value;
+  
+  if (c== "")
+  {alert("date of birth must be filled out");
+  return false;
+  }
+  let d = document.forms["myForm"]["Address"].value;
+  
+  if (d== "")
+  {alert("Address name must be filled out");
+  return false;
+  }
+  let e = document.forms["myForm"]["City"].value;
+  
+  if (e== "")
+  {alert("City name must be filled out");
+  return false;
+  }
+  let j = document.forms["myForm"]["state"].value;
+  
+  if (j== "")
+  {alert("State must be filled out");
+  return false;
+  }
+  let f = document.forms["myForm"]["Pin code"].value;
+  
+  if (f== "")
+  {alert("pin code  must be filled out");
+  return false;
+  }
+  let g = document.forms["myForm"]["Contact"].value;
+  
+  if (g== "")
+  {alert("Contact No.  must be filled out");
+  return false;
+  }
+   let h = document.forms["myForm"]["E-mail"].value;
+  
+  if (h== "")
+  {alert("E-mail id  must be filled out");
+  return false;
+  }
+  let i = document.forms["myForm"]["Male"].value;
+  
+  if (i== "")
+  {alert("Gender  must be filled out");
+  return false;
+  }
+  
+ 
+}
+</script>
+				
+			</div>
+		</div>
+	</div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+
+</body>
+</html>
